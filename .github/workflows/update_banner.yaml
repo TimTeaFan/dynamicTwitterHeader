@@ -30,6 +30,8 @@ jobs:
       #     git push -f
       - name: Commit image and push to origin
         run: |
+          pwd
+          ls
           git config user.email github-actions@github.com
           git config user.name github-actions
           git commit -a -m'[bot]: updated banner image' --allow-empty
