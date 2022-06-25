@@ -10,6 +10,8 @@ jobs:
     container: timteafan/pymar
     steps:
       - uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       # - name: git config
       #   run: |
       #     git config user.email github-actions@github.com
