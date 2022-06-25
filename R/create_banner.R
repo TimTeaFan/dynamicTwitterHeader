@@ -244,7 +244,7 @@ img8 <- image_annotate(img7,
                size = 24,
                color = "white",
                weight = 600,
-               location = "+1273+333")
+               location = "+1273+338")
 
 # add SO data to plot
 img9 <- image_annotate(img8,
@@ -253,7 +253,7 @@ img9 <- image_annotate(img8,
                        size = 24,
                        color = "white",
                        weight = 600,
-                       location = "+1273+367")
+                       location = "+1273+372")
 
 img10 <- image_annotate(img9,
                        so_user_dat$silver_medals,
@@ -261,7 +261,7 @@ img10 <- image_annotate(img9,
                        size = 24,
                        color = "white",
                        weight = 600,
-                       location = "+1315+367")
+                       location = "+1315+372")
 
 img11 <- image_annotate(img10,
                         so_user_dat$bronze_medals,
@@ -269,7 +269,7 @@ img11 <- image_annotate(img10,
                         size = 24,
                         color = "white",
                         weight = 600,
-                        location = "+1370+367")
+                        location = "+1370+372")
 
 final_plot <- image_annotate(img11,
                         lst_answ_date_pretty,
@@ -277,7 +277,7 @@ final_plot <- image_annotate(img11,
                         size = 21,
                         color = "white",
                         weight = 400,
-                        location = "+1273+399")
+                        location = "+1273+404")
 
 # save image
 image_write(final_plot, "data/final_plot.png", format = "png")
