@@ -30,9 +30,7 @@ jobs:
       #     git push -f
       - name: Commit image and push to origin
         run: |
-          cd ..
-          pwd
-          ls
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
           git config user.email github-actions@github.com
           git config user.name github-actions
           git commit -a -m'[bot]: updated banner image' --allow-empty
