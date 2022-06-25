@@ -130,9 +130,9 @@ ggsave("data/ggplot_follower.png",
 
 
 # Import the image
-background_img <- image_read("data/background_final2.png")
+background_img <- image_read("data/background_final.png")
 ggplot_img <- image_read("data/ggplot_follower.png")
-twitter_box <- image_read("data/latest_followers_box4.png")
+twitter_box <- image_read("data/latest_followers_box.png")
 
 img <- c(background_img, ggplot_img)
 
@@ -212,7 +212,7 @@ img6 <- image_composite(img5,
                         offset = "+878+165")
 
 # add SO image
-so_box <- image_read("data/so_box2.png")
+so_box <- image_read("data/so_box.png")
 
 img7 <- image_composite(img6,
                         image_scale(so_box, "x190"),
