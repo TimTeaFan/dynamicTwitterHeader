@@ -19,6 +19,7 @@ jobs:
           TWITTER_CONSUMER_API_SECRET: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
           TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
           TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+          TIMTEAFAN_TWITTER_BEARER_TOKEN: ${{ secrets.TIMTEAFAN_TWITTER_BEARER_TOKEN }}
       - name: Commit and Push changes
         run: |
           git commit -a -m'[bot]: updated banner image' --allow-empty
