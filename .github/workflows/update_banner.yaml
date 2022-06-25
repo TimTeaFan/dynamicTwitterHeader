@@ -27,7 +27,7 @@ jobs:
       #     git commit -a -m'[bot]: updated banner image' --allow-empty
       #     git push -f
       - name: upload banner image to Twitter
-        run: python python/upload_banner.py
+        run: python3 python/upload_banner.py
         env:
           TWITTER_CONSUMER_API_KEY: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
           TWITTER_CONSUMER_API_SECRET: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
