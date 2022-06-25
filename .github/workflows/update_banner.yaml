@@ -30,7 +30,7 @@ jobs:
       #     git push -f
       - name: Commit image and push to origin
         run: |
-          cd..
+          cd ..
           pwd
           ls
           git config user.email github-actions@github.com
