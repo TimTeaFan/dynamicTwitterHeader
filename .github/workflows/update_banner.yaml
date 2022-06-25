@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     container: timteafan/pymar
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
       # - name: git config
       #   run: |
       #     git config user.email github-actions@github.com
@@ -26,6 +26,12 @@ jobs:
       #   run: |
       #     git commit -a -m'[bot]: updated banner image' --allow-empty
       #     git push -f
+      - name: Commit image and push to origin
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git commit -a -m'[bot]: updated banner image' --allow-empty
+          git push -f
       - name: upload banner image to Twitter
         run: python3 python/upload_banner.py
         env:
