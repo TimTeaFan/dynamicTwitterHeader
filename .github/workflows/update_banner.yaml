@@ -1,0 +1,32 @@
+name: update_banner
+on:
+  schedule:
+    - cron: '0 0 1 * *'
+  workflow_dispatch:
+
+jobs:
+  create_and_update_banner:
+    runs-on: ubuntu-latest
+    container: timteafan/pymar
+    steps:
+      - uses: actions/checkout@v3
+      - name: git config
+        run: Rscript R/create_banner.R
+          git config user.email github-actions@github.com
+          git config user.name github-actions
+        env:
+          TWITTER_CONSUMER_API_KEY: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
+          TWITTER_CONSUMER_API_SECRET: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+      - name: Commit and Push changes
+        run: |
+          git commit -a -m'[bot]: updated banner image' --allow-empty
+          git push -f
+      - name: Create and post tweet
+        run: python python/upload_banner.py
+        env:
+          TWITTER_CONSUMER_API_KEY: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
+          TWITTER_CONSUMER_API_SECRET: ${{ secrets.TWITTER_CONSUMER_API_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
