@@ -11,9 +11,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: git config
-        run: Rscript R/create_banner.R
+        run: |
           git config user.email github-actions@github.com
           git config user.name github-actions
+      - name: create banner image
+        run: Rscript R/create_banner.R
         env:
           TIMTEAFAN_TWITTER_CONSUMER_API_KEY: ${{ secrets.TIMTEAFAN_TWITTER_CONSUMER_API_KEY }}
           TIMTEAFAN_TWITTER_CONSUMER_API_SECRET: ${{ secrets.TIMTEAFAN_TWITTER_CONSUMER_API_SECRET }}
@@ -24,7 +26,7 @@ jobs:
         run: |
           git commit -a -m'[bot]: updated banner image' --allow-empty
           git push -f
-      - name: Create and post tweet
+      - name: upload banner image to Twitter
         run: python python/upload_banner.py
         env:
           TWITTER_CONSUMER_API_KEY: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
