@@ -1,7 +1,7 @@
 name: update_banner
 on:
   schedule:
-    - cron: '0 0 1 * *'
+    - cron: '0 12 * * *'
   workflow_dispatch:
 
 jobs:
@@ -16,8 +16,8 @@ jobs:
       TIMTEAFAN_TWITTER_BEARER_TOKEN: ${{ secrets.TIMTEAFAN_TWITTER_BEARER_TOKEN }}
     steps:
       - uses: actions/checkout@v3.0.2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+        # with:
+        #   token: ${{ secrets.GITHUB_TOKEN }}
       - name: create banner image
         run: Rscript R/create_banner.R
       - name: Commit image and push to origin
@@ -29,8 +29,3 @@ jobs:
           git push -f
       - name: upload banner image to Twitter
         run: python3 python/upload_banner.py
-        # env:
-        #   TIMTEAFAN_TWITTER_CONSUMER_API_KEY: ${{ secrets.TIMTEAFAN_TWITTER_CONSUMER_API_KEY }}
-        #   TIMTEAFAN_TWITTER_CONSUMER_API_SECRET: ${{ secrets.TIMTEAFAN_TWITTER_CONSUMER_API_SECRET }}
-        #   TIMTEAFAN_TWITTER_ACCESS_TOKEN: ${{ secrets.TIMTEAFAN_TWITTER_ACCESS_TOKEN }}
-        #   TIMTEAFAN_TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TIMTEAFAN_TWITTER_ACCESS_TOKEN_SECRET }}
