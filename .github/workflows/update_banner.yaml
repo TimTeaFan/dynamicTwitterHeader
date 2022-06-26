@@ -15,9 +15,7 @@ jobs:
       TIMTEAFAN_TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TIMTEAFAN_TWITTER_ACCESS_TOKEN_SECRET }}
       TIMTEAFAN_TWITTER_BEARER_TOKEN: ${{ secrets.TIMTEAFAN_TWITTER_BEARER_TOKEN }}
     steps:
-      - uses: actions/checkout@v3.0.2
-        # with:
-        #   token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v3
       - name: create banner image
         run: Rscript R/create_banner.R
       - name: Commit image and push to origin
