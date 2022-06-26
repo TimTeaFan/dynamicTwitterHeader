@@ -140,6 +140,7 @@ p <- ggplot() +
            colour = "#00D24E",
            size = 2.32)
 
+# let's save this plot as png
 ggsave("data/ggplot_follower.png",
        plot = p,
        width = 6,
@@ -151,7 +152,7 @@ ggsave("data/ggplot_follower.png",
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
-#                       ---- Part I -----
+#        ---- Creating the banner image: Part I -----
 # Initialize banner, get Twitter data and add profile images #
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 
@@ -189,6 +190,8 @@ profil_imgs <- latest_fol_dat %>%
   image_read()
 
 # function to create profile mask in form of a circle
+# largely inspired (and partly copied) from this answer on StackOverflow:
+# https://stackoverflow.com/a/40069492/9349302
 create_profile_mask <- function(bg = "#ffffff", fill = "#000000", border = FALSE, border_color = "#ffffff") {
   png(tf <- tempfile(fileext = ".png"), 400, 400)
   par(mar = rep(0,4), yaxs = "i", xaxs = "i", bg = bg)
@@ -241,7 +244,7 @@ img6 <- image_composite(img5,
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
-#                 ---- Part II -----
+#    ---- Creating the banner image Part II -----
 # Get SO data and add image parts to finalize banner #
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 
@@ -258,7 +261,7 @@ so_user_req <- request("https://api.stackexchange.com/2.3/users/9349302?order=de
 so_user_info <- so_user_req %>% req_perform()
 so_user_info_ls <- so_user_info %>% resp_body_json()
 
-so_user_dat <- list(reputation = so_user_info_ls$items[[1]]$reputation,
+so_user_dat <- list(reputation    = so_user_info_ls$items[[1]]$reputation,
                     gold_medals   = so_user_info_ls$items[[1]]$badge_counts$gold,
                     silver_medals = so_user_info_ls$items[[1]]$badge_counts$silver,
                     bronze_medals = so_user_info_ls$items[[1]]$badge_counts$bronze)
