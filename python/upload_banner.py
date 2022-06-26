@@ -14,6 +14,8 @@ auth = tweepy.OAuth1UserHandler(
    ACCSEC
 )
 
+# setup tweepy API with Twitter keys
 api = tweepy.API(auth)
 
+# upload profile banner
 api.update_profile_banner('data/final_plot.png')
