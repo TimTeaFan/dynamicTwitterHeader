@@ -2,6 +2,7 @@
 FROM rocker/tidyverse:4.2.1
 ENV DEBIAN_FRONTEND=noninteractive
 
+# add lib path
 RUN touch ~/.Renviron 
 RUN echo "R_LIBS_USER=/usr/lib/R/site-library" >> ~/.Renviron
 
@@ -23,5 +24,5 @@ RUN pip3 install -r requirements.txt
 # installing r libraries
 RUN Rscript requirements.R
 
-# install magick
+# install magick and system dependencies
 RUN sudo apt install r-cran-magick -y
