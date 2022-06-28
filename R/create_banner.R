@@ -74,7 +74,7 @@ saveRDS(upd_twitter_followers_tbl, "data/twitter_followers.rds")
 # ----- create plot showing Twitter followers over time -----
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 
-# create tbl copy for geom_point, only containg min and max
+# create tbl copy for geom_point, only containing min and max
 twitter_followers_last <- upd_twitter_followers_tbl %>%
   mutate(followers = if_else(date %in% range(date), followers, NA_real_))
 
