@@ -165,7 +165,7 @@ twitter_box <- image_read("data/latest_followers_box.png")
 img <- c(background_img, ggplot_img)
 img2 <- image_mosaic(img)
 
-# compose Twitter box iamge on top:
+# compose Twitter box image on top:
 img3 <- image_composite(img2,
                 image_scale(twitter_box, "x200"),
                 offset = "+575+095")
