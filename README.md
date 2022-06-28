@@ -96,10 +96,10 @@ The initial background image: [![Background of Twitter Profile
 Banner](data/background_final.png)](https://github.com/TimTeaFan/dynamicTwitterHeader/blob/main/data/background_final.png)
 
 A box which will show the latest followers:<br>
-<a href="https://github.com/TimTeaFan/dynamicTwitterHeader/blob/main/data/latest_followers_box.png"><img src="data/latest_followers_box.png" style="max-width: 350px;" alt="An empty box which will show the profile pictures of the last three followers"></a>
+<a href="https://github.com/TimTeaFan/dynamicTwitterHeader/blob/main/data/latest_followers_box.png"><img src="data/latest_followers_box.png" width="350px" alt="An empty box which will show the profile pictures of the last three followers"></a>
 
 A box which will show some current data from Stack Overflow:<br>
-<a href="https://github.com/TimTeaFan/dynamicTwitterHeader/blob/main/data/so_box.png"><img src="data/so_box.png" style="max-width: 350px;" alt="An empty box which will show some current data from Stack Overflow"></a>
+<a href="https://github.com/TimTeaFan/dynamicTwitterHeader/blob/main/data/so_box.png"><img src="data/so_box.png" width="350px" alt="An empty box which will show some current data from Stack Overflow"></a>
 
 #### Getting data and adding it to the final profile banner image
 
