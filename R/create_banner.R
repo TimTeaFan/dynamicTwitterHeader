@@ -134,7 +134,7 @@ p <- ggplot() +
   # ... current number of followers
   annotate(geom = "text",
            x = x_latest_date - ((diff(range(upd_twitter_followers_tbl$date)) / 15) * 1.1),
-           y = y_latest_followers + 5,
+           y = y_latest_followers + 10,
            label = paste(y_latest_followers, "Followers"),
            hjust = "right",
            colour = "#00D24E",
