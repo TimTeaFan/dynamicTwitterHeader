@@ -185,7 +185,8 @@ latest_fol_dat <- latest_followers %>%
   mutate(profil_img = lookup_users(user_id, token = timteafan_token)$profile_image_url)
 
 profil_imgs <- latest_fol_dat %>%
-  mutate(profil_img = gsub("(_)(normal)(\\.jp(|e)g)$", "\\1400x400\\3", profil_img)) %>%
+  mutate(profil_img = gsub("^http", "https", profil_img) %>%
+           gsub("(_)(normal)(\\.jp(|e)g)$", "\\1400x400\\3", .)) %>%
   pull(profil_img) %>%
   image_read()
 
