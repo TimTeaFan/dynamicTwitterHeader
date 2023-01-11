@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 ![GitHub Workflow
-Status](https://img.shields.io/github/workflow/status/timteafan/dynamicTwitterHeader/update_banner?label=status&logo=Github%20Actions&logoColor=white&style=flat-square)
+Status](https://img.shields.io/github/actions/workflow/status/timteafan/dynamicTwitterHeader/update_banner.yaml?branch=main&label=status&logo=Github%20Actions&logoColor=white&style=flat-square)
 ![GH
 Actions](https://img.shields.io/static/v1?label=automated%20with&message=GitHub%20Actions&color=2088FF&logo=GitHub%20Actions&style=flat-square&labelColor=52535e)
 <!-- badges: end -->
@@ -25,18 +25,18 @@ profile banner shows:
 
 The most essential parts are:
 
--   the [R script](/R/update_banner.R) that gets data from Twitter and
-    Stack Overflow, and then adds this data together with some template
-    images together to build the final profile banner.
--   the [python script](/python/upload_banner.py) that uploads the
-    profile banner to Twitter.
--   the [YAML script](/.github/workflows/update_banner.yaml) that
-    automates the workflow using Github Actions.
--   the [Dockerfile](Dockerfile) which was used to create the Docker Hub
-    repository
-    [timteafan/pymar](https://hub.docker.com/repository/docker/timteafan/pymar).
-    This docker image contains all packages and system libraries which
-    are needed for the job run.
+- the [R script](/R/update_banner.R) that gets data from Twitter and
+  Stack Overflow, and then adds this data together with some template
+  images together to build the final profile banner.
+- the [python script](/python/upload_banner.py) that uploads the profile
+  banner to Twitter.
+- the [YAML script](/.github/workflows/update_banner.yaml) that
+  automates the workflow using Github Actions.
+- the [Dockerfile](Dockerfile) which was used to create the Docker Hub
+  repository
+  [timteafan/pymar](https://hub.docker.com/repository/docker/timteafan/pymar).
+  This docker image contains all packages and system libraries which are
+  needed for the job run.
 
 The remainder of this README elaborates on each of those parts. This
 helps me remember the workarounds that were necessary to make this
