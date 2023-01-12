@@ -157,7 +157,7 @@ ggsave("data/ggplot_follower.png",
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
 
 # Import background, ggplot and twitter box images
-background_img <- image_read("data/background_final.png")
+background_img <- image_read("data/background_final1.png")
 ggplot_img <- image_read("data/ggplot_follower.png")
 twitter_box <- image_read("data/latest_followers_box.png")
 
