@@ -44,6 +44,11 @@ no_of_followers <- twit_user_info_ls$data$public_metrics$followers_count
 # I got this data from https://analytics.twitter.com/
 twitter_followers_tbl <- readRDS("data/twitter_followers.rds")
 
+# write latest follower data as json
+no_followers <- twitter_followers_tbl[nrow(twitter_followers_tbl), "followers"]
+no_followers_json = toJSON(list(data = list(followers = no_followers)))
+write(no_followers_json, "data/followers.json")
+
 # get last date in historical follower data
 last_tbl_date <- twitter_followers_tbl %>%
   slice_tail(n = 1) %>%
