@@ -6,6 +6,7 @@ pkgs <- c("lubridate",
           "rtweet",
           "ggpubr",
           "magick",
-          "plotrix")
+          "plotrix",
+          "jsonlite")
 
 install.packages(pkgs)
