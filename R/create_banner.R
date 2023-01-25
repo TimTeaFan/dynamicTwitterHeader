@@ -11,7 +11,7 @@ library(rtweet)
 library(ggpubr)
 library(magick)
 library(plotrix)
-
+library(jsonlite)
 
 # Twitter Token setup
 # Create a token containing the Twitter keys
