@@ -47,10 +47,7 @@ twitter_followers_tbl <- readRDS("data/twitter_followers.rds")
 # write latest follower data as json
 no_followers <- twitter_followers_tbl[nrow(twitter_followers_tbl), "followers"]
 no_followers_ls <- list(data = list(followers = no_followers))
-# try different approaches:
 jsonlite::write_json(no_followers_ls, "data/followers")
-write(jsonlite::toJSON(no_followers_ls), "follower")
-saveRDS(no_followers, "data/my_test.rds")
 
 # get last date in historical follower data
 last_tbl_date <- twitter_followers_tbl %>%
