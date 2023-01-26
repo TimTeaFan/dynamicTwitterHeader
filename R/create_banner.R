@@ -40,14 +40,13 @@ twit_user_info_ls <- twit_user_info %>% resp_body_json()
 
 no_of_followers <- twit_user_info_ls$data$public_metrics$followers_count
 
+# write latest follower data as json
+no_followers_ls <- list(data = list(followers = no_of_followers))
+jsonlite::write_json(no_followers_ls, "data/followers")
+
 # read in historical follower data
 # I got this data from https://analytics.twitter.com/
 twitter_followers_tbl <- readRDS("data/twitter_followers.rds")
-
-# write latest follower data as json
-no_followers <- twitter_followers_tbl[nrow(twitter_followers_tbl), "followers"]
-no_followers_ls <- list(data = list(followers = no_followers))
-jsonlite::write_json(no_followers_ls, "data/followers")
 
 # get last date in historical follower data
 last_tbl_date <- twitter_followers_tbl %>%
@@ -72,7 +71,6 @@ if (is_new_month) {
 
 # save updated data
 saveRDS(upd_twitter_followers_tbl, "data/twitter_followers.rds")
-
 
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
