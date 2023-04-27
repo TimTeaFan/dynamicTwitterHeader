@@ -13,8 +13,8 @@ Actions](https://img.shields.io/static/v1?label=automated%20with&message=GitHub%
 
 ## About
 
-This repo contains scripts and files that automatically create and
-update the Twitter profile banner (also know as “header image”) of my
+This repo contains scripts and files that automatically created and
+updated the Twitter profile banner (also know as “header image”) of my
 main Twitter account [@TimTeaFan](https://twitter.com/TimTeaFan). The
 profile banner shows:
 
@@ -22,6 +22,9 @@ profile banner shows:
 2.  the profile pictures of my latest three followers
 3.  some current data of my Stack Overflow account (reputation, medals,
     and date of most recent answer)
+
+!! The workflow that automates this repo is disabled, since Twitter API
+access has been suspended !!
 
 The most essential parts are:
 

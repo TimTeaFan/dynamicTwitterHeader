@@ -23,13 +23,14 @@ knitr::opts_chunk$set(
 
 ## About
 
-This repo contains scripts and files that automatically create and update the Twitter profile banner 
-(also know as "header image") of my main Twitter account [@TimTeaFan](https://twitter.com/TimTeaFan).
+This repo contains scripts and files that automatically created and updated the Twitter profile banner (also know as "header image") of my main Twitter account [@TimTeaFan](https://twitter.com/TimTeaFan).
 The profile banner shows:
 
 1. the number of my Twitter followers over time up to the current month
 1. the profile pictures of my latest three followers
 1. some current data of my Stack Overflow account (reputation, medals, and date of most recent answer)
+
+!! The workflow that automates this repo is disabled, since Twitter API access has been suspended !!
 
 
 The most essential parts are:
